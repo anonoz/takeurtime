@@ -46,6 +46,11 @@ function grabTable($intakecode,$week) {
 	
 	$loopcount = 0; //explain later below
 	foreach ($parsing->find('tr') as $tr){
+
+		//The first row is NOT the actual timetable data
+		//A loopcount blocker which is used above is simply to block
+		//the header row. $loopcount will be TRUE once the first row is bypassed.
+
 		if ($loopcount){
 			
 			//Create an array for a single lecture
@@ -63,10 +68,8 @@ function grabTable($intakecode,$week) {
 			$lecturesinthisintake[]=$aclass;
 			
 		}
+
 		$loopcount=1;
-		//The first row is NOT the actual timetable data
-		//A loopcount blocker which is used above is simply to block
-		//the header row.
 		
 	}
 	
