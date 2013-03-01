@@ -33,3 +33,11 @@ The API, I call it DX2, returns either a string *same* which indicates there is 
 I suggest you to install [JSONView for Google Chrome](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) so that you can look at the API output in a structured way.
 
 Now here is a [sample output](http://www.anonoz.com/tut/api.php?dx2=samplemd5goeshere) from the API. Understand it and try to make your app fits what it gives you. Remember on your app, switch on GZip/Deflate compression whenever possible to obtain the almost impossibru data transfer speed. Good luck.
+
+##How is the front-end packaged?
+
+To deliver the fastest app loading experience (Forget bout the PDFs, we can deal with them later), I put all the CSS and JavaScript into index.html. I know this is insane, but this is some extreme way to counter extra handshakes and latencies. 
+
+The CSS and JS are minified before they are added into index.html. 
+
+Cache.php is a cache manifest file with MIME type text/cache-manifest. It is THE material that enables the app available offline.
