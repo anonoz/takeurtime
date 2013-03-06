@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Takeurtime : Timetable app for APU" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Takeurtime</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/anonoz/takeurtime">View on GitHub</a>
+
+          <h1 id="project_title">Takeurtime</h1>
+          <h2 id="project_tagline">Timetable app for APU</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/anonoz/takeurtime/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/anonoz/takeurtime/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>TakeUrTime - HTML5 APU/APIIT Timetable</h1>
+
+<p>You can access the app itself at <a href="http://www.anonoz.com/tut">http://www.anonoz.com/tut</a></p>
+
+<p>Or you can read about the story of its existence on <a href="http://www.anonoz.com/portfolio/takeurtime-apu-apiit/">my portfolio</a>.</p>
+
+<h2>Server side codes for App Developers</h2>
+
+<p>You probably don't need my HTML, CSS, and JS front-end codes at all. You just either have to use my API on anonoz.com or if you have better modification, feel free to fork the server-side code and improve on your own, but do share what you have up in the sleeves. </p>
+
+<p>You can install the PHP in your server and serve to your iOS/Android/BB/WP apps, whatever. But if you use my API, a trackback link to my <a href="http://www.anonoz.com">blog and portfolio site</a> would be great.</p>
+
+<h2>The API on Anonoz.com</h2>
+
+<p>Like how Git works, each timetable is identified not by its week or version number, but by MD5. That is how TakeUrTime API on Anonoz.com works so efficiently that it manages to save a heck lot of time and bandwidth, not to mention the cellular turbulence smartphone users experience sometimes. </p>
+
+<p>The API, I call it DX2, returns either a string <em>same</em> which indicates there is no change in timetable between client and server. Or it will return a JSON array which is structured in this manner:</p>
+
+<ul>
+<li>Metadata
+
+<ul>
+<li>MD5</li>
+<li>Week</li>
+</ul>
+</li>
+<li>List of building...
+
+<ul>
+<li>List of classrooms in TPM</li>
+<li>... in ENT3</li>
+<li>... in MINES</li>
+</ul>
+</li>
+<li>List of lecturers' names</li>
+<li>List of modules WITHOUT lab/tutorial/lectures</li>
+<li>List of timetables correspond to intak codes
+
+<ul>
+<li>Intake Code</li>
+<li>Info of the particular lecture.</li>
+</ul>
+</li>
+</ul><p>I suggest you to install <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc">JSONView for Google Chrome</a> so that you can look at the API output in a structured way.</p>
+
+<p>Now here is a <a href="http://www.anonoz.com/tut/api.php?dx2=samplemd5goeshere">sample output</a> from the API. Understand it and try to make your app fits what it gives you. Remember on your app, switch on GZip/Deflate compression whenever possible to obtain the almost impossibru data transfer speed. Good luck.</p>
+
+<h2>How is the front-end packaged?</h2>
+
+<p>To deliver the fastest app loading experience (Forget bout the PDFs, we can deal with them later), I put all the CSS and JavaScript into index.html. I know this is insane, but this is some extreme way to counter extra handshakes and latencies. </p>
+
+<p>The CSS and JS are minified before they are added into index.html. </p>
+
+<p>Cache.php is a cache manifest file with MIME type text/cache-manifest. It is THE material that enables the app available offline.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Takeurtime maintained by <a href="https://github.com/anonoz">anonoz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32151613-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
